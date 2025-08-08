@@ -1,0 +1,231 @@
+/* Preview-safe styles for Boomparis component */
+.boomparis-preview * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.boomparis-preview {
+  font-family: "Saans TRAIL", Arial, sans-serif;
+  background-color: #e3e3db;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.boomparis-preview ::selection {
+  background: #ffcc00;
+  color: black;
+  font-weight: 900;
+}
+
+.boomparis-preview p {
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.boomparis-preview .hero {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #15161b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  clip-path: polygon(0% 45%, 0% 45%, 0% 55%, 0% 55%);
+  will-change: clip-path;
+}
+
+.boomparis-preview .progress-bar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 25%;
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffbb00;
+  z-index: 10;
+}
+
+.boomparis-preview .video-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  clip-path: polygon(20% 20%, 80% 20%, 80% 80%, 20% 80%);
+  will-change: transform, clip-path;
+  overflow: hidden;
+}
+
+.boomparis-preview .video-container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+.boomparis-preview nav,
+.boomparis-preview footer {
+  width: 100%;
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  mix-blend-mode: difference;
+  z-index: 2;
+}
+
+.boomparis-preview footer {
+  justify-content: flex-end;
+}
+
+.boomparis-preview footer p {
+  margin-left: 2em;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.boomparis-preview .header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 60%;
+  text-align: center;
+  z-index: 1;
+}
+
+.boomparis-preview .header h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 0.85;
+  letter-spacing: -0.075rem;
+  color: #fff;
+  overflow: hidden;
+}
+
+.boomparis-preview .header p {
+  margin-top: 1em;
+  color: #ffbb00;
+}
+
+.boomparis-preview .coordinates {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffbb00;
+  z-index: 1;
+}
+
+.boomparis-preview .logo {
+  position: fixed;
+  bottom: 0;
+  padding: 1.5em;
+  left: 50%;
+  display: flex;
+  transform: translateX(-50%);
+  will-change: transform;
+  color: #fff;
+  mix-blend-mode: difference;
+  z-index: 2;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-family: "Sans Serif";
+}
+
+.boomparis-preview .char {
+  display: inline-block;
+  margin-right: 0.5rem;
+  overflow: hidden;
+}
+
+.boomparis-preview .char h1 {
+  display: inline-block;
+  transform: translateY(200%);
+  font-size: 1.5em;
+  font-weight: normal;
+  letter-spacing: -0.05em;
+}
+
+.boomparis-preview .text-container {
+  position: relative;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  padding: 20px 30px;
+  overflow: hidden;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.boomparis-preview .sliding-text {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffbb00;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.boomparis-preview .play-icon {
+  margin-right: 10px;
+  font-size: 12px;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.4s ease;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.boomparis-preview .heart {
+  margin-left: 10px;
+  font-size: 12px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.boomparis-preview .text-container:hover .sliding-text {
+  transform: translateX(-30px);
+}
+
+.boomparis-preview .text-container:hover .heart {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.boomparis-preview .text-container:hover .play-icon {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.boomparis-preview footer p:hover {
+  color: #ffbb00;
+  cursor: pointer;
+}

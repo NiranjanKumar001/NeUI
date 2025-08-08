@@ -1,19 +1,62 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import About from './pages/About';
-import MagicPage from './pages/MagicPage';
+import { Route, BrowserRouter as Router, Routes, useLocation } from 'react-router-dom'
+import { SearchProvider } from './components/context/SearchContext/SearchContext';
+import { TransitionProvider } from './components/context/TransitionContext/TransitionContext';
+import { useEffect } from 'react';
+import { Toaster } from 'sonner'
+import { forceChakraDarkTheme } from './utils/utils';
+import { toastStyles } from './utils/customTheme';
 
-function App() {
+import DisplayHeader from './components/landing/DisplayHeader/DisplayHeader';
+import Header from './components/navs/Header';
+import Sidebar from './components/navs/Sidebar';
+import LandingPage from './pages/LandingPage'
+import CategoryPage from './pages/CategoryPage'
+function AppContent() {
+  const location = useLocation();
+
+  const getActiveItem = () => {
+    if (location.pathname === '/') return 'home';
+    return null;
+  };
+
+  const isCategoryPage = location.pathname.match(/^\/[^/]+\/[^/]+$/);
+
   return (
-    <Router>
+    <>
+      {!isCategoryPage && <DisplayHeader activeItem={getActiveItem()} />}
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/magic" element={<MagicPage />} />
+        <Route exact path="/" element={<LandingPage />} />
+        <Route path="/:category/:subcategory" element={
+          <SearchProvider>
+              <TransitionProvider>
+                <main className='app-container'>
+                  <Header />
+                  <section className='category-wrapper'>
+                    <Sidebar />
+                    <CategoryPage />
+                  </section>
+                  <Toaster
+                    toastOptions={toastStyles}
+                    position='bottom-right'
+                    visibleToasts={1}
+                  />
+                </main>
+              </TransitionProvider>
+          </SearchProvider>
+        } />
       </Routes>
-    </Router>
+    </>
   );
 }
 
-export default App;
+export default function App() {
+  useEffect(() => {
+    forceChakraDarkTheme();
+  }, []);
+
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
+}

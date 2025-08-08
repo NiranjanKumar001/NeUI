@@ -6,11 +6,17 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+components-mcp.json
+scripts/mcp.js
 
 node_modules
 dist
 dist-ssr
 *.local
+public/default
+public/tailwind
+public/ts/default
+public/ts/tailwind
 
 # Editor directories and files
 .vscode/*

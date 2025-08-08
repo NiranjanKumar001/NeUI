@@ -1,0 +1,272 @@
+/* src/components/HeroAnimation.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Saans TRAIL";
+  src: url("./SaansTRIAL-Regular.woff") format("woff");
+}
+
+.app {
+  font-family: "Saans TRAIL";
+  background-color: #e3e3db;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+::selection {
+  background: #ffcc00;
+  color: black;
+  font-weight: 900;
+}
+
+p {
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100s%;
+  background-color: #15161b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  clip-path: polygon(0% 45%, 0% 45%, 0% 55%, 0% 55%);
+  will-change: clip-path;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 25%;
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffbb00;
+  z-index: 10;
+}
+
+.video-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100s%;
+  background-color: #000;
+  clip-path: polygon(20% 20%, 80% 20%, 80% 80%, 20% 80%);
+  will-change: transform, clip-path;
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+nav,
+footer {
+  width: 100%;
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  mix-blend-mode: difference;
+  z-index: 2;
+}
+
+footer {
+  justify-content: flex-end;
+  gap: 1em;
+}
+
+.header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.header h1 {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 7%;
+  line-height: 0.85;
+  letter-spacing: -0.075rem;
+  color: #fff;
+  overflow: hidden;
+}
+
+.header p {
+  margin-top: 1em;
+  color: #ffbb00;
+}
+
+.coordinates {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffbb00;
+  z-index: 1;
+}
+
+.logo {
+  position: fixed;
+  bottom: 0;
+  padding: 1.5em;
+  left: 50%;
+  display: flex;
+  transform: translateX(-50%);
+  will-change: transform;
+  color: #fff;
+  mix-blend-mode: difference;
+  z-index: 2;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-family: "Sans Serif";
+}
+
+.char {
+  overflow: hidden;
+}
+
+.char.anim-out h1 {
+  position: relative;
+  will-change: transform;
+}
+
+.header h1,
+.header p,
+.coordinates p,
+.char.anim-out {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.header span,
+.coordinates p span {
+  position: relative;
+  display: block;
+  transform: translateY(100%);
+  will-change: transform;
+}
+
+@media (max-width: 900px) {
+  p {
+    font-size: 13px;
+  }
+
+  .progress-bar {
+    justify-content: flex-end;
+  }
+
+  .progress-bar p:nth-child(1) {
+    display: none;
+  }
+
+  .header h1 {
+    font-size: 10%;
+  }
+
+  .coordinates {
+    top: 65%;
+    justify-content: center;
+    gap: 1em;
+    color: #fff;
+    opacity: 0.5;
+  }
+  .logo {
+    bottom: 3em;
+  }
+}
+
+.text-container {
+  position: relative;
+  cursor: pointer;
+  padding: 20px 30px;
+  overflow: hidden;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.sliding-text {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffbb00;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.play-icon {
+  margin-right: 10px;
+  font-size: 12px;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.4s ease;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.heart {
+  margin-left: 10px;
+  font-size: 12px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.text-container:hover .sliding-text {
+  transform: translateX(-30px);
+}
+
+.text-container:hover .heart {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.text-container:hover .play-icon {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+
+footer p:hover {
+  color: #ffbb00;
+  cursor: pointer;
+}
