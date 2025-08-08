@@ -1,5 +1,5 @@
 const backgrounds = {
-  'boomparis': () => import("@demo/Backgrounds/BoomParisDemo"),
+  'boomparis': () => import("@demo/Backgrounds/BoomparisDemo"),
 };
 
 export const componentMap = {
