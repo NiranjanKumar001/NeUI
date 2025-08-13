@@ -42,7 +42,7 @@ const DisplayHeader = ({ activeItem }) => {
           </nav>
 
           <button className="cta-button" onClick={() => window.open('https://github.com/NiranjanKumar001/NeUI', '_blank')}>
-            Star On GitHub
+            Star on Github
             <span ref={starCountRef} style={{ opacity: 0 }}>
               <img src={star} alt="Star Icon" />
               {stars}
