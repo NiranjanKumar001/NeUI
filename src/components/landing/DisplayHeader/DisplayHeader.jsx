@@ -28,7 +28,7 @@ const DisplayHeader = ({ activeItem }) => {
       );
     }
   }, [stars]);
-
+  
   return (
     <header className="header">
       <div className='header-container'>
