@@ -8,6 +8,7 @@ export const CATEGORIES = [
     name: 'Landing Page',
     subcategories: [
       'BoomParis',
+      'Rejouice',
     ],
   }
 ];

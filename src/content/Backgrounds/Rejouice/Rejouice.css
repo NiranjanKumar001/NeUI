@@ -1,0 +1,246 @@
+@font-face {
+  font-family: 'FuturaBk';
+  src: url('./FuturaBk.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'FuturaMd';
+  src: url('./FuturaMd.woff') format('woff');
+}
+
+.rejouice-container {
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: 'FuturaBk', Arial, sans-serif;
+  color: #1a1a1a;
+  background-color: #ffffff;
+}
+
+.reveal-type {
+  overflow: hidden;
+}
+
+.reveal-type .letter {
+  display: inline-block;
+  will-change: transform;
+}
+
+.mobile-menu {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.mobile-nav-item span {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.mobile-lets-talk-top,
+.mobile-menu-footer {
+  will-change: transform, opacity;
+}
+
+.header {
+  mix-blend-mode: difference;
+  z-index: 1000;
+}
+
+.header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.home-text-animation {
+  perspective: 1000px;
+}
+
+.home-text-animation .letter {
+  transform-origin: 50% 100%;
+  will-change: transform;
+}
+
+.nav-item {
+  overflow: hidden;
+}
+
+.nav-item span {
+  display: inline-block;
+  transition: transform 0.6s ease;
+  will-change: transform;
+}
+
+.nav-item:hover span {
+  transform: translateY(-100%);
+}
+
+.nav-item::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translateY(0);
+  transition: transform 0.6s ease;
+  will-change: transform;
+}
+
+.nav-item:hover::after {
+  transform: translateY(-100%);
+}
+
+.page-1 {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-2 {
+  min-height: 100vh;
+  position: relative;
+}
+
+.page-4 {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-container {
+  cursor: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-cursor {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: #0066ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  will-change: transform, opacity;
+}
+
+.lets-talk-btn {
+  border: 1px solid #1a1a1a;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.lets-talk-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.lets-talk-btn:hover::before {
+  left: 0;
+}
+
+.lets-talk-btn:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .video-container {
+    cursor: default;
+  }
+  
+  .video-cursor {
+    display: none;
+  }
+  
+  .mobile-menu {
+    display: none;
+  }
+  
+  .mobile-menu.open {
+    display: flex;
+  }
+}
+
+.text-[25vw] {
+  font-size: 25vw;
+  line-height: 0.8;
+}
+
+.text-[20vw] {
+  font-size: 20vw;
+  line-height: 0.8;
+}
+
+.text-[15vw] {
+  font-size: 15vw;
+  line-height: 0.8;
+}
+
+@media (max-width: 768px) {
+  .text-[25vw] {
+    font-size: 30vw;
+  }
+  
+  .text-[20vw] {
+    font-size: 25vw;
+  }
+  
+  .text-[15vw] {
+    font-size: 20vw;
+  }
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-text {
+  font-size: 8vw;
+  font-family: 'FuturaMd', Arial, sans-serif;
+  color: #1a1a1a;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
