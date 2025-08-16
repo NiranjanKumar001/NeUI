@@ -4,7 +4,6 @@ import { CodeTab, PreviewTab, TabbedLayout } from "../../components/common/Tabbe
 import CodeExample from "../../components/code/CodeExample";
 import Dependencies from "../../components/code/Dependencies";
 import FullScreenPreview from "../../components/common/Preview/FullScreenPreview";
-// import BoomparisPreview from "../../content/Backgrounds/Boomparis/BoomparisPreview";
 import { boomparis } from '../../constants/code/Backgrounds/boomparisCode';
 import boomparisVideo from '../../assets/videos/boomparis.mp4';
 
@@ -21,7 +20,6 @@ const BoomparisDemo = () => {
         />
         <Dependencies dependencyList={['gsap']} />
       </PreviewTab>
-
       <CodeTab>
         <CodeExample codeObject={boomparis} />
       </CodeTab></TabbedLayout>
