@@ -20,6 +20,7 @@ const RejouiceDemo = () => {
       </PreviewTab>
 
       <CodeTab>
+        
         <CodeExample codeObject={rejouice} />
       </CodeTab>
     </TabbedLayout>

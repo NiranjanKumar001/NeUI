@@ -16,7 +16,6 @@ import {
 import { FiMenu, FiStopCircle } from "react-icons/fi";
 
 import { useStars } from "../../hooks/useStars";
-
 import Logo from "../../assets/logos/react-bits-logo.svg";
 import Star from "../../assets/common/star.svg";
 

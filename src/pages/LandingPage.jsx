@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import Hero from "../components/landing/Hero/Hero";
-import heroImage from "../assets/common/hero.webp";
 
 const LandingPage = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -21,11 +20,11 @@ const LandingPage = () => {
 
       {isMobile && (
         <div className="mobile-hero-background-container">
-          <img
+          {/* <img
             src={heroImage}
             alt="Hero background"
             className="mobile-hero-background-image"
-          />
+          /> */}
         </div>
       )}
       <Hero />
