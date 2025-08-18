@@ -240,7 +240,6 @@ function Rejouice() {
         <h3 ref={loaderTextRef}>Tomorrow&apos;s Brands, Today™️</h3>
       </div>
       
-      {/* Desktop Navigation */}
       {!isMobile && (
         <div className="nav">
           <div className="nav-left">
