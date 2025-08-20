@@ -31,7 +31,9 @@ export const TransitionProvider = ({ children }) => {
   const startTransition = useCallback(async (targetSubcategory, componentMap, onNavigate) => {
     if (isTransitioning) return;
     setIsTransitioning(true);
+
     setTransitionPhase('fade-out');
+  
 
     const preloadPromise = preloadComponent(targetSubcategory, componentMap);
     await delay(300);
