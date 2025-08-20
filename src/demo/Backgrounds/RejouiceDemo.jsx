@@ -18,7 +18,6 @@ const RejouiceDemo = () => {
         />
         <Dependencies dependencyList={['gsap', 'locomotive-scroll']} />
       </PreviewTab>
-
       <CodeTab>
         
         <CodeExample codeObject={rejouice} />
