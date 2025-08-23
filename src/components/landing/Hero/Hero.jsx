@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <div className="landing-content">
       <div className="hero-main-content">
-
+        
         <Link to={"/backgrounds/boomparis"} className="landing-button">
           <span>Browse Components</span>
           <div className="button-arrow-circle">
