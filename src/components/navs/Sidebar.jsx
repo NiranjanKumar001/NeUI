@@ -291,15 +291,6 @@ const Sidebar = () => {
               </Text>
               <Flex direction="column" gap={2}>
                 <Link
-                  to="https://github.com/DavidHDev/react-bits"
-                  target="_blank"
-                  onClick={closeDrawer}
-                  display="block"
-                  mb={2}
-                >
-                  <Flex alignItems="center" gap='4px'><span>GitHub</span> <Icon as={FiArrowRight} {...ARROW_ICON_PROPS} /></Flex>
-                </Link>
-                <Link
                   to="/showcase"
                   onClick={closeDrawer}
                   display="block"
